@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Senuuuu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,500&family=Nunito:wght@400;600&display=swap">
+<style>
+/* Layout: one soft letter column over a dusk glow, hero left-aligned, sections read like paragraphs of a handwritten note */
+:root {
+  --bg: #f6eef8;
+  --surface: #ffffff;
+  --fg: #34243f;
+  --muted: #6e5b7b;
+  --accent: #c2417a;
+  --on-accent: #ffffff;
+  --glow: #e9c9f2;
+  --line: #e3d3ea;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #181022;
+    --surface: #241833;
+    --fg: #f3e9f8;
+    --muted: #b7a3c6;
+    --accent: #f08db8;
+    --on-accent: #2a0f1d;
+    --glow: #3a2452;
+    --line: #3a2a4c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #181022;
+  --surface: #241833;
+  --fg: #f3e9f8;
+  --muted: #b7a3c6;
+  --accent: #f08db8;
+  --on-accent: #2a0f1d;
+  --glow: #3a2452;
+  --line: #3a2a4c;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: radial-gradient(ellipse at 85% 0%, var(--glow), transparent 60%);
+  background-repeat: no-repeat;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  padding-block: 56px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  position: relative;
+  overflow-x: hidden;
+}
+.sparkles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.sparkles i {
+  position: absolute;
+  width: 6px; height: 6px;
+  background: var(--accent);
+  opacity: .45;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  animation: twinkle 4.5s ease-in-out infinite;
+}
+.sparkles i:nth-child(1) { top: 6%; left: 10%; transform: scale(1.6); animation-delay: -1s; }
+.sparkles i:nth-child(2) { top: 14%; left: 82%; transform: scale(2.2); animation-delay: -2.5s; }
+.sparkles i:nth-child(3) { top: 30%; left: 92%; animation-delay: -3.2s; }
+.sparkles i:nth-child(4) { top: 44%; left: 5%; transform: scale(1.8); animation-delay: -.4s; }
+.sparkles i:nth-child(5) { top: 62%; left: 88%; transform: scale(1.4); animation-delay: -1.8s; }
+.sparkles i:nth-child(6) { top: 78%; left: 14%; transform: scale(2); animation-delay: -3.8s; }
+.sparkles i:nth-child(7) { top: 92%; left: 70%; transform: scale(1.5); animation-delay: -2.1s; }
+@keyframes twinkle { 0%, 100% { opacity: .2; } 50% { opacity: .7; } }
+
+main { position: relative; max-width: 34rem; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+.eyebrow { margin: 0 0 12px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(3rem, 14vw, 5.2rem);
+  line-height: 1.02;
+  color: var(--accent);
+  text-wrap: balance;
+}
+.lede { margin: 20px 0 0; font-size: 1.15rem; color: var(--muted); }
+h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+p { margin: 0 0 14px; }
+p:last-child { margin-bottom: 0; }
+section { min-width: 0; }
+.note {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px 24px;
+}
+.note blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.5;
+}
+.closing { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+button {
+  font: inherit;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+button:hover { transform: translateY(-2px); }
+button:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+.reply {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--accent);
+}
+.sign { font-family: var(--font-display); font-style: italic; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) {
+  .sparkles i { animation: none; }
+  button { transition: none; }
+  button:hover { transform: none; }
+}
+</style>
+
+<div class="sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<main>
+  <header>
+    <p class="eyebrow">For my Senuuuu 🧚✨</p>
+    <h1>I'm so sorry.</h1>
+    <p class="lede">I made you cry last night, and I hate that I did.</p>
+  </header>
+
+  <section>
+    <h2>What I did</h2>
+    <p>I did something you would never have expected from me. It took me time to understand what I had actually done, and I feel ashamed that it took that long.</p>
+    <p>I broke your heart once again. I'm really, really sorry.</p>
+  </section>
+
+  <section>
+    <h2>What you are to me</h2>
+    <p>You know how much you're worth to me. You are my whole life, babe. I don't see a world without you in it, my beautiful.</p>
+  </section>
+
+  <section class="note">
+    <blockquote>If you could see through my eyes, you'd know how it feels to look at an angel who fell from heaven. That is what I see when I look at you.</blockquote>
+  </section>
+
+  <section class="closing">
+    <h2>I'm lucky to have you</h2>
+    <p>Thank you for being in my life, Senuuuu. I'm sorry for hurting you, and I'm grateful you're still here.</p>
+    <button id="forgive" type="button" aria-controls="reply" aria-expanded="false">Can you forgive me? 🥹</button>
+    <p class="reply" id="reply" hidden>Thank you, my angel. I love you so much. 🫶✨</p>
+    <p class="sign">Always yours 🧚</p>
+  </section>
+</main>
+
+<script>
+  var btn = document.getElementById("forgive");
+  var reply = document.getElementById("reply");
+  btn.addEventListener("click", function () {
+    reply.hidden = false;
+    btn.setAttribute("aria-expanded", "true");
+    btn.hidden = true;
+  });
+</script>
+
+</html>
